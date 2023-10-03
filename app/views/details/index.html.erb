@@ -1,2 +1,27 @@
-<h1>Details#index</h1>
-<p>Find me in app/views/details/index.html.erb</p>
+
+<%= link_to "New Detail", new_detail_path%>
+<hr>
+<%@details.each do |detail|%>
+	<ul>
+		<li>
+			<%= link_to detail.title, detail_path(detail)%>| <%= link_to "Edit Detail", edit_detail_path(detail)%> | <%= link_to "Destroy", detail_path(detail), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?" 
+              } %> 
+		</li>
+			
+	</ul>
+<%end%>
+
+
+<%#= link_to "Show Details", post_path(@post) %>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
